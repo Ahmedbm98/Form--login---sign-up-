@@ -18,10 +18,11 @@ btn.addEventListener("click", function (e) {
       for (let i = 0; i < getUser.length; i++) {
         if (getUser[i].theEmail === email && getUser[i].password === password) {
           isLoggedIn = true;
+          break;
         }
       }
 
-      if (isLoggedIn) {
+      if (isLoggedIn === true) {
         location.replace("../pages/welcome.html");
       } else {
         errorPara.textContent = "Invalid Email Or Password";
