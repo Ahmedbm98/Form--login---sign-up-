@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <!-- Fontawsome -->
+    <link rel="stylesheet" href="../css/all.min.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Main Css File -->
+    <link rel="stylesheet" href="../css/signUp.css" />
+  </head>
+  <body>
+    <!-- Start Form Sign Up -->
+    <form method="post">
+      <h1>Smart Login System</h1>
+      <div>
+        <input
+          oninput="isValidation(this,nameReg)"
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Enter Your Name"
+        />
+      </div>
+      <p class="d-none">Name Invalid</p>
+      <div>
+        <input
+          oninput="isValidation(this,emailReg)"
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Enter Your Email"
+        />
+      </div>
+      <p class="d-none">Email Invalid</p>
+      <div>
+        <input
+          oninput="isValidation(this,passwordReg)"
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Password Should Contain 6 Char and At Least Special Char"
+        />
+        <i id="open-eye" class="fa-regular fa-eye"></i>
+        <i id="close-eye" class="d-none fa-solid fa-eye-slash"></i>
+      </div>
+      <p class="d-none">password Invalid</p>
+
+      <button>sign up</button>
+      <p>you have an account? <a href="../index.html">signin</a></p>
+    </form>
+
+    <!-- End Form Sign Up -->
+    <script src="../js/signUp.js"></script>
+  </body>
+</html>

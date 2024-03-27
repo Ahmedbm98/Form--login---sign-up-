@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Fontawsome -->
+    <link rel="stylesheet" href="../css/all.min.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/login.css" />
+  </head>
+  <body>
+    <!-- Start Login Form -->
+    <form method="post">
+      <h1>Smart Login System</h1>
+      <div>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Enter your email"
+        />
+      </div>
+      <div>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Enter your password"
+        />
+      </div>
+      <p id="error"></p>
+      <button>login</button>
+      <p>Don’t have an account? <a href="./pages/signUp.html">Sign Up</a></p>
+    </form>
+    <!-- End Login Form -->
+
+    <!-- JS File -->
+    <script src="./js/login.js"></script>
+  </body>
+</html>

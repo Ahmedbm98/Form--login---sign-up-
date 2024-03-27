@@ -1,0 +1,106 @@
+/* Start Variables */
+:root {
+   --bg-color: #24353F;
+   --txt-color: #17A2B8;
+   --white-color: #fff;
+}
+
+/* End Variables */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   background-color: var(--bg-color);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   font-family: sans-serif, "Titillium Web";
+}
+
+form {
+   box-shadow: 4px 4px 10px rgba(0, 0, 0, .5);
+   width: 50%;
+   padding-inline: 2rem;
+   padding-block: 1.5rem;
+   border-radius: 5px;
+   text-align: center;
+}
+
+form h1 {
+   color: var(--txt-color);
+   font-size: 40px;
+   font-weight: 500;
+   margin-block: 1rem;
+}
+
+form div {
+   margin-block: 1.5rem;
+}
+
+form input {
+   width: 100%;
+   height: 30px;
+   padding: 1.1rem .8rem;
+   border-radius: 5px;
+   background-color: transparent;
+   color: var(--white-color);
+   font-size: 15px;
+   outline: none;
+}
+
+form input::placeholder {
+   color: var(--white-color);
+   opacity: .7;
+}
+
+form input,
+form button {
+   box-shadow: 0 0 5px var(--txt-color) inset;
+   border: 1px solid var(--txt-color);
+}
+
+form button {
+   width: 100%;
+   height: 30px;
+   font-size: 18px;
+   text-transform: capitalize;
+   background-color: transparent;
+   color: var(--txt-color);
+   border-radius: 4px;
+   margin-block: 2rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 17px;
+   transition: .4s ease;
+   cursor: pointer;
+   box-shadow: 0 0 10px var(--txt-color);
+}
+
+form button:hover {
+   background-color: var(--txt-color);
+   color: var(--white-color);
+   letter-spacing: 4px;
+
+}
+
+form p {
+   color: var(--white-color);
+   text-transform: capitalize;
+}
+
+form p a {
+   color: inherit;
+   text-decoration: none;
+   transition: .4s ease;
+}
+
+form p a:hover {
+   color: var(--txt-color);
+   text-shadow: 0 0 10px var(--txt-color);
+   letter-spacing: 1px;
+}
