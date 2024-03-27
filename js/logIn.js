@@ -1,6 +1,6 @@
 let emailInput = document.querySelector("input[type='email']");
 let passwordInput = document.querySelector("input[type='password']");
-let btn = document.querySelector("button");
+let btn = document.querySelector("a");
 let errorPara = document.getElementById("error");
 
 let getUser = JSON.parse(localStorage.getItem("Users"));
