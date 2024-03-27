@@ -22,7 +22,7 @@ btn.addEventListener("click", function (e) {
       }
 
       if (isLoggedIn) {
-        location.href = "../pages/welcome.html";
+        location.replace("../pages/welcome.html");
       } else {
         errorPara.textContent = "Invalid Email Or Password";
         errorPara.style.marginBlock = "1.2rem";
