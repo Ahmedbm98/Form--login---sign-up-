@@ -2,90 +2,81 @@
 :root {
    --bg-color: #24353F;
    --txt-color: #17A2B8;
-   --white-color: #fff;
+   --white-color: #FFF;
 }
 
 /* End Variables */
+/* Start Global Rules */
 * {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
+
 }
 
 body {
+   font-family: "sans-serif", "Titillium Web";
    background-color: var(--bg-color);
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   height: 100vh;
-   font-family: sans-serif, "Titillium Web";
 }
 
+/* End Global Rules */
 header {
    position: absolute;
-   left: 0;
-   right: 0;
-   top: 0;
-   box-shadow: 0 0 10px rgba(0, 0, 0, .25);
+   width: 100%;
+   box-shadow: 0 0 20px rgba(0, 0, 0, .5);
 }
 
 header .container {
-   margin: auto;
+   width: 80%;
+   padding-block: 1rem;
+   margin-inline: auto;
    display: flex;
    justify-content: space-between;
    align-items: center;
-   width: 70%;
-   height: 80px;
-   font-size: 22px;
+}
+
+header .container h2 a {
+   display: block;
+   text-decoration: none;
    color: var(--txt-color);
+   font-size: 30px;
+   font-weight: 600;
 }
 
 header .container button {
-   padding: .6rem .5rem;
+   font-size: 22px;
+   font-weight: 400;
+   text-transform: capitalize;
+   padding: .6rem;
    border-radius: 5px;
    border: 1px solid var(--txt-color);
-   outline: none;
-   font-size: 18px;
-   text-transform: capitalize;
-   font-weight: 600;
    background-color: transparent;
-   color: var(--white-color);
+   color: var(--txt-color);
    cursor: pointer;
-   transition: .8s ease;
+   transition: all .4s ease;
 }
 
 header .container button:hover {
    background-color: var(--txt-color);
-   box-shadow: 0 0 10px var(--txt-color);
-}
-
-header .container a {
-   display: block;
-   color: #fff;
-   text-transform: capitalize;
-   text-decoration: none;
-   padding: 7px;
-   border: 1px solid var(--txt-color);
-   border-radius: 5px;
-   transition: .7s ease;
-}
-
-header .container a:hover {
-   background-color: var(--txt-color);
+   box-shadow: 0 0 22px var(--txt-color);
+   color: var(--white-color);
 }
 
 section {
-   width: 50%;
    display: flex;
    justify-content: center;
    align-items: center;
-   font-size: 40px;
-   border-radius: 5px;
-   box-shadow: 0px 10px 45px rgba(0, 0, 0, .25);
-   padding: 2rem;
+   height: 100vh;
 }
 
-section h1 {
-   color: var(--txt-color);
-   font-size: 70px;
+section .content {
+   width: 50%;
+   text-align: center;
+   border-radius: 5px;
+   padding: 5rem;
+   box-shadow: 0 0 20px rgba(0, 0, 0, .25);
+   color: var(--white-color);
+   font-size: 40px;
+   font-weight: 400;
+   text-transform: capitalize;
 }

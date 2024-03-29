@@ -1,74 +1,87 @@
-let nameInput = document.querySelector('input[name="name"]');
-let emailInput = document.querySelector('input[name="email"]');
-let passwordInput = document.querySelector('input[name="password"]');
-let openEye = document.getElementById("open-eye");
-let closeEye = document.getElementById("close-eye");
+let nameInput = document.querySelector("#name");
+let emailInput = document.querySelector("#email");
+let passwordInput = document.querySelector("#password");
+
+let openEye = document.querySelector(".fa-eye");
+let closeEye = document.querySelector(".fa-eye-slash");
 let btn = document.querySelector("button");
+let errorPara = document.querySelector(".error");
 
-let correct = document.querySelectorAll(".correct");
-let inCorrect = document.querySelectorAll(".incorrect");
+let arrUsers;
+if (localStorage.getItem("users") !== null) {
+  arrUsers = JSON.parse(localStorage.getItem("users"));
+} else {
+  arrUsers = [];
+}
 
-let listOfUsers = [];
-
-// Create Pattern Form
-let nameReg = /^[a-zA-Z]{3,}(0-9)*/;
-let emailReg = /^\w+@\w+\.\w+/;
-let passwordReg = /^\w{5,}([!@#$%^&*()-\+/\*\?\."])+/;
-
+console.log(arrUsers);
 // Create User
 btn.addEventListener("click", function (e) {
   e.preventDefault();
 
   if (
-    isValidation(nameInput, nameReg) &
-    isValidation(emailInput, emailReg) &
-    isValidation(passwordInput, passwordReg)
+    validationInput(nameInput, nameReg) &
+    validationInput(emailInput, emailReg) &
+    validationInput(passwordInput, passwordReg)
   ) {
-    let user = {
-      theName: nameInput.value,
-      theEmail: emailInput.value,
-      password: passwordInput.value
-    };
-    listOfUsers.push(user);
-    localStorage.setItem("Users", JSON.stringify(listOfUsers));
-    resetInputValue();
-    location.href = "../index.html";
+    let userExist = false;
+    for (let i = 0; i < arrUsers.length; i++) {
+      if (
+        arrUsers[i].Name === nameInput.value &&
+        arrUsers[i].Email === emailInput.value &&
+        arrUsers[i].Password === passwordInput.value
+      ) {
+        userExist = true;
+        break;
+      }
+    }
+
+    if (userExist === true) {
+      errorPara.textContent = "This Account Is Already Exists";
+      errorPara.classList.replace("d-none", "d-block");
+      errorPara.style = "color:red; margin-block: 1rem";
+    } else {
+      let user = {
+        Name: nameInput.value,
+        Email: emailInput.value,
+        Password: passwordInput.value
+      };
+      arrUsers.push(user);
+      localStorage.setItem("users", JSON.stringify(arrUsers));
+      location.href = "../index.html";
+      // console.log(arrUsers);
+    }
   }
 });
-
-// Reset Input Value
-function resetInputValue() {
-  nameInput.value = null;
-  emailInput.value = null;
-  passwordInput.value = null;
-}
 
 // Show Password
-openEye.addEventListener("click", () => {
-  passwordInput.setAttribute("type", "text");
+openEye.addEventListener("click", function () {
+  passwordInput.type = "text";
   if (passwordInput.value !== "") {
-    closeEye.classList.replace("d-none", "d-block");
     openEye.classList.replace("d-block", "d-none");
+    closeEye.classList.replace("d-none", "d-block");
   }
 });
-
-closeEye.addEventListener("click", (e) => {
-  passwordInput.setAttribute("type", "password");
-  openEye.classList.replace("d-none", "d-block");
+// Hidden Password
+closeEye.addEventListener("click", function () {
+  passwordInput.type = "password";
   closeEye.classList.replace("d-block", "d-none");
+  openEye.classList.replace("d-none", "d-block");
 });
 
-// Check Validation Input
-function isValidation(ele, reg) {
-  let myP = ele.parentElement.nextElementSibling;
+// Create Pattern Form
+let nameReg = /^[a-zA-Z]{3,}(0-9)*/;
+let emailReg = /^\w+@\w+\.\w+/;
+// let passwordReg = /^\w{5,}([!@#$%^&*()-\+/\*\?\."])+\w*/;
+let passwordReg = /(!@#$%^&*()_-\+\*\?"\/)?\w{5,}(!@#$%^&*()_-\+\*\?"\/)?/;
+
+// Validation Input
+function validationInput(ele, reg) {
   if (reg.test(ele.value)) {
-    myP.classList.replace("d-block", "d-none");
     ele.style = `border: 1px solid #17A2B8`;
     return true;
   } else {
-    ele.style = `border: 1px solid red`;
-    myP.classList.replace("d-none", "d-block");
-    myP.style = `color: red`;
+    ele.style = "border: 1px solid red";
     return false;
   }
 }
