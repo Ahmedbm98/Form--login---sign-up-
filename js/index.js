@@ -16,7 +16,6 @@ btn.addEventListener("click", function (e) {
     errorPara.classList.replace("d-none", "d-block");
     errorPara.textContent = "Email Or Password Is Empty";
     errorPara.style = "color:red; margin-top: 15px";
-    return;
   }
   let userFound = false;
   if (getUser !== null) {
