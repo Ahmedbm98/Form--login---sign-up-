@@ -22,7 +22,7 @@ btn.addEventListener("click", function (e) {
     for (let i = 0; i < getUser.length; i++) {
       if (getUser[i].Email === email && getUser[i].Password === password) {
         let userName = getUser[i].Name;
-        location.href = `../home.html?${userName}`;
+        location.href = `./home.html?${userName}`;
         userFound = true;
         break;
       }

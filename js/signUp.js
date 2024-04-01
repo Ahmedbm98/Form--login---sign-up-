@@ -48,7 +48,8 @@ btn.addEventListener("click", function (e) {
       };
       arrUsers.push(user);
       localStorage.setItem("users", JSON.stringify(arrUsers));
-      location.href = "../index.html";
+      // location.href = "../index.html";
+      location.href = "./index.html";
       // console.log(arrUsers);
     }
   }
