@@ -3,7 +3,8 @@ let btn = document.querySelector("button");
 
 // LogOut
 btn.addEventListener("click", function () {
-  location.replace("../index.html");
+  // location.replace("./signUp.html");
+  location.href = "./index.js";
 });
 
 // Display Name In Heading
